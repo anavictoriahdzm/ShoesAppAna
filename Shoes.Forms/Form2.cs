@@ -76,21 +76,29 @@ namespace Shoes.Forms
                 List<AVHM_BusquedaID_Result> ListaId = objnegocio.ListaID(int.Parse(txtId.Text));
                 foreach (var item in ListaId.ToList())
                 {
-                    txtNom.Text = item.Nombre;
-                    txtIdBrand.Text = item.IdBrand.ToString();
-                    txtIdCatalog.Text = item.IdCatalog.ToString();
-                    txtIdColor.Text = item.IdColor.ToString();
-                    txtIdProvider.Text = item.IdProvider.ToString();
-                    txtIdType.Text = item.IdType.ToString();
-                    txtKeywords.Text = item.Keywords;
-                    txtDescrip.Text = item.Description.ToString();
-                    txtPClient.Text = item.PriceClient.ToString();
-                    txtObservation.Text = item.Observations.ToString();
-                    txtPDistributor.Text = item.PriceDistributor.ToString();
-                    txtPMember.Text = item.PriceMember.ToString();
-                    txtTitle.Text = item.Title.ToString();
-                    cbIsEnable.Checked = item.IsEnabled;
-                    dtpDateUpdate.Value = item.DateUpdate.Value;
+                    try
+                    {
+                        txtNom.Text = item.Nombre;
+                        txtIdBrand.Text = item.IdBrand.ToString();
+                        txtIdCatalog.Text = item.IdCatalog.ToString();
+                        txtIdColor.Text = item.IdColor.ToString();
+                        txtIdProvider.Text = item.IdProvider.ToString();
+                        txtIdType.Text = item.IdType.ToString();
+                        txtKeywords.Text = item.Keywords;
+                        txtDescrip.Text = item.Description.ToString();
+                        txtPClient.Text = item.PriceClient.ToString();
+                        txtObservation.Text = item.Observations.ToString();
+                        txtPDistributor.Text = item.PriceDistributor.ToString();
+                        txtPMember.Text = item.PriceMember.ToString();
+                        txtTitle.Text = item.Title.ToString();
+                        cbIsEnable.Checked = item.IsEnabled;
+                        dtpDateUpdate.Value = item.DateUpdate.Value;
+                    }
+                    catch
+                    {
+
+                    }
+                    
                 }
             }
         }
