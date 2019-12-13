@@ -12,24 +12,22 @@ namespace Shoes.Data
     using System;
     using System.Collections.Generic;
     
-    public partial class CatCatalog
+    public partial class CatTypeDetails
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public CatCatalog()
+        public CatTypeDetails()
         {
-            this.Products = new HashSet<Product>();
+            this.DetailProduct = new HashSet<DetailProduct>();
         }
     
-        public int IdCatalog { get; set; }
-        public Nullable<int> IdProvider { get; set; }
-        public string Season { get; set; }
-        public Nullable<System.DateTime> StarActiveDate { get; set; }
-        public Nullable<System.DateTime> EndActiveDate { get; set; }
-        public Nullable<System.DateTime> DateUpdate { get; set; }
-        public bool IsEnabled { get; set; }
+        public int IdTypeDetail { get; set; }
+        public int IdType { get; set; }
+        public string Code { get; set; }
+        public string Name { get; set; }
+        public string Description { get; set; }
     
-        public virtual CatProvider CatProvider { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Product> Products { get; set; }
+        public virtual ICollection<DetailProduct> DetailProduct { get; set; }
+        public virtual CatTypeProduct CatTypeProduct { get; set; }
     }
 }

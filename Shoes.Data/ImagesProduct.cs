@@ -18,9 +18,9 @@ namespace Shoes.Data
         public int IdProduct { get; set; }
         public string Decription { get; set; }
         public byte[] Image { get; set; }
-        public Nullable<System.DateTime> DateUpdate { get; set; }
-        public string IsEnabled { get; set; }
+        public System.DateTime DateUpdate { get; set; }
+        public bool IsEnabled { get; set; }
     
-        public virtual Product Product { get; set; }
+        public virtual Products Products { get; set; }
     }
 }

@@ -12,21 +12,25 @@ namespace Shoes.Data
     using System;
     using System.Collections.Generic;
     
-    public partial class CatColor
+    public partial class CatProviders
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public CatColor()
+        public CatProviders()
         {
-            this.Products = new HashSet<Product>();
+            this.CatCatalogs = new HashSet<CatCatalogs>();
+            this.Products = new HashSet<Products>();
         }
     
-        public int IdColor { get; set; }
+        public int IdProvider { get; set; }
         public string Name { get; set; }
         public string Description { get; set; }
-        public string HexaDecimal { get; set; }
-        public bool IsEnable { get; set; }
+        public Nullable<bool> IsEnabled { get; set; }
+        public Nullable<System.DateTime> DateUpdate { get; set; }
+        public string Url { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Product> Products { get; set; }
+        public virtual ICollection<CatCatalogs> CatCatalogs { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Products> Products { get; set; }
     }
 }

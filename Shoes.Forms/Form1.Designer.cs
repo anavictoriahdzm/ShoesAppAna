@@ -100,6 +100,7 @@
             this.dgvDatos.Location = new System.Drawing.Point(29, 209);
             this.dgvDatos.Name = "dgvDatos";
             this.dgvDatos.RowTemplate.Height = 28;
+            this.dgvDatos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvDatos.Size = new System.Drawing.Size(1166, 259);
             this.dgvDatos.TabIndex = 6;
             // 
@@ -130,6 +131,7 @@
             this.btnModificar.TabIndex = 9;
             this.btnModificar.Text = "Modificar";
             this.btnModificar.UseVisualStyleBackColor = true;
+            this.btnModificar.Click += new System.EventHandler(this.btnModificar_Click);
             // 
             // btnLimpiar
             // 

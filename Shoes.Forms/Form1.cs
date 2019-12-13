@@ -66,5 +66,13 @@ namespace Shoes.Forms
             Shoes.Forms.Form2 Frm2 = new Shoes.Forms.Form2();
             Frm2.ShowDialog();
         }
+
+        private void btnModificar_Click(object sender, EventArgs e)
+        {
+            Shoes.Forms.Form2 Frm2 = new Shoes.Forms.Form2();
+            int varid = (int)dgvDatos.CurrentRow.Cells["Id"].Value;
+            Frm2.txtId.Text = varid.ToString();
+            Frm2.ShowDialog();
+        }
     }
 }

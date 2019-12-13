@@ -19,12 +19,6 @@ namespace Shoes.Forms
             InitializeComponent();
         }
 
-        private void Form2_Load(object sender, EventArgs e)
-        {
-
-        }
-
-
         public void InsertarProd(int IdType, int IdColor, int IdBrand, int IdProvider, int IdCatalog, string Title, string Nombre, string Description, string Observations, decimal PriceDistributor, decimal PriceClient, decimal PriceMember, bool IsEnabled, string Keywords, DateTime DateUdate)
         {
             ProductsBL ObjetoNegocio = new ProductsBL();
@@ -70,6 +64,35 @@ namespace Shoes.Forms
             cbIsEnable.Checked = false;
             txtKeywords.Text = "";
             dtpDateUpdate.Value = DateTime.Now;
+        }
+
+        private void Form2_Load(object sender, EventArgs e)
+        {
+            if (txtId.Text != null)
+            {
+                DataProductsEntities dtp = new DataProductsEntities();
+                ProductsBL objnegocio = new ProductsBL();
+
+                List<AVHM_BusquedaID_Result> ListaId = objnegocio.ListaID(int.Parse(txtId.Text));
+                foreach (var item in ListaId.ToList())
+                {
+                    txtNom.Text = item.Nombre;
+                    txtIdBrand.Text = item.IdBrand.ToString();
+                    txtIdCatalog.Text = item.IdCatalog.ToString();
+                    txtIdColor.Text = item.IdColor.ToString();
+                    txtIdProvider.Text = item.IdProvider.ToString();
+                    txtIdType.Text = item.IdType.ToString();
+                    txtKeywords.Text = item.Keywords;
+                    txtDescrip.Text = item.Description.ToString();
+                    txtPClient.Text = item.PriceClient.ToString();
+                    txtObservation.Text = item.Observations.ToString();
+                    txtPDistributor.Text = item.PriceDistributor.ToString();
+                    txtPMember.Text = item.PriceMember.ToString();
+                    txtTitle.Text = item.Title.ToString();
+                    cbIsEnable.Checked = item.IsEnabled;
+                    dtpDateUpdate.Value = item.DateUpdate.Value;
+                }
+            }
         }
     }
 }

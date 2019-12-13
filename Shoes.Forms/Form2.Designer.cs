@@ -60,12 +60,15 @@
             this.txtKeywords = new System.Windows.Forms.TextBox();
             this.label15 = new System.Windows.Forms.Label();
             this.btnLimpiar = new System.Windows.Forms.Button();
+            this.btnModificar = new System.Windows.Forms.Button();
+            this.label16 = new System.Windows.Forms.Label();
+            this.txtId = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(37, 66);
+            this.label1.Location = new System.Drawing.Point(38, 121);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(65, 20);
             this.label1.TabIndex = 0;
@@ -74,7 +77,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(37, 112);
+            this.label2.Location = new System.Drawing.Point(38, 167);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(68, 20);
             this.label2.TabIndex = 1;
@@ -83,7 +86,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(37, 160);
+            this.label3.Location = new System.Drawing.Point(38, 215);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(74, 20);
             this.label3.TabIndex = 2;
@@ -92,7 +95,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(37, 215);
+            this.label4.Location = new System.Drawing.Point(38, 270);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(88, 20);
             this.label4.TabIndex = 3;
@@ -101,7 +104,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(37, 275);
+            this.label5.Location = new System.Drawing.Point(38, 330);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(86, 20);
             this.label5.TabIndex = 4;
@@ -110,7 +113,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(37, 329);
+            this.label6.Location = new System.Drawing.Point(38, 384);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(46, 20);
             this.label6.TabIndex = 5;
@@ -119,7 +122,7 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(37, 375);
+            this.label7.Location = new System.Drawing.Point(38, 430);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(73, 20);
             this.label7.TabIndex = 6;
@@ -199,49 +202,49 @@
             // 
             // txtIdType
             // 
-            this.txtIdType.Location = new System.Drawing.Point(129, 66);
+            this.txtIdType.Location = new System.Drawing.Point(130, 121);
             this.txtIdType.Name = "txtIdType";
             this.txtIdType.Size = new System.Drawing.Size(100, 26);
             this.txtIdType.TabIndex = 15;
             // 
             // txtIdColor
             // 
-            this.txtIdColor.Location = new System.Drawing.Point(129, 112);
+            this.txtIdColor.Location = new System.Drawing.Point(130, 167);
             this.txtIdColor.Name = "txtIdColor";
             this.txtIdColor.Size = new System.Drawing.Size(100, 26);
             this.txtIdColor.TabIndex = 16;
             // 
             // txtIdBrand
             // 
-            this.txtIdBrand.Location = new System.Drawing.Point(129, 160);
+            this.txtIdBrand.Location = new System.Drawing.Point(130, 215);
             this.txtIdBrand.Name = "txtIdBrand";
             this.txtIdBrand.Size = new System.Drawing.Size(100, 26);
             this.txtIdBrand.TabIndex = 17;
             // 
             // txtIdProvider
             // 
-            this.txtIdProvider.Location = new System.Drawing.Point(129, 215);
+            this.txtIdProvider.Location = new System.Drawing.Point(130, 270);
             this.txtIdProvider.Name = "txtIdProvider";
             this.txtIdProvider.Size = new System.Drawing.Size(100, 26);
             this.txtIdProvider.TabIndex = 18;
             // 
             // txtIdCatalog
             // 
-            this.txtIdCatalog.Location = new System.Drawing.Point(129, 268);
+            this.txtIdCatalog.Location = new System.Drawing.Point(130, 323);
             this.txtIdCatalog.Name = "txtIdCatalog";
             this.txtIdCatalog.Size = new System.Drawing.Size(100, 26);
             this.txtIdCatalog.TabIndex = 19;
             // 
             // txtTitle
             // 
-            this.txtTitle.Location = new System.Drawing.Point(89, 326);
+            this.txtTitle.Location = new System.Drawing.Point(90, 381);
             this.txtTitle.Name = "txtTitle";
             this.txtTitle.Size = new System.Drawing.Size(240, 26);
             this.txtTitle.TabIndex = 20;
             // 
             // txtNom
             // 
-            this.txtNom.Location = new System.Drawing.Point(109, 368);
+            this.txtNom.Location = new System.Drawing.Point(110, 423);
             this.txtNom.Name = "txtNom";
             this.txtNom.Size = new System.Drawing.Size(220, 26);
             this.txtNom.TabIndex = 21;
@@ -325,11 +328,40 @@
             this.btnLimpiar.UseVisualStyleBackColor = true;
             this.btnLimpiar.Click += new System.EventHandler(this.btnLimpiar_Click);
             // 
+            // btnModificar
+            // 
+            this.btnModificar.Location = new System.Drawing.Point(556, 516);
+            this.btnModificar.Name = "btnModificar";
+            this.btnModificar.Size = new System.Drawing.Size(90, 37);
+            this.btnModificar.TabIndex = 32;
+            this.btnModificar.Text = "Modificar";
+            this.btnModificar.UseVisualStyleBackColor = true;
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.Location = new System.Drawing.Point(42, 71);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(31, 20);
+            this.label16.TabIndex = 33;
+            this.label16.Text = "Id: ";
+            // 
+            // txtId
+            // 
+            this.txtId.Enabled = false;
+            this.txtId.Location = new System.Drawing.Point(79, 71);
+            this.txtId.Name = "txtId";
+            this.txtId.Size = new System.Drawing.Size(62, 26);
+            this.txtId.TabIndex = 34;
+            // 
             // Form2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(975, 565);
+            this.Controls.Add(this.txtId);
+            this.Controls.Add(this.label16);
+            this.Controls.Add(this.btnModificar);
             this.Controls.Add(this.btnLimpiar);
             this.Controls.Add(this.label15);
             this.Controls.Add(this.txtKeywords);
@@ -386,23 +418,26 @@
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Label label14;
-        private System.Windows.Forms.CheckBox cbIsEnable;
-        private System.Windows.Forms.TextBox txtIdType;
-        private System.Windows.Forms.TextBox txtIdColor;
-        private System.Windows.Forms.TextBox txtIdBrand;
-        private System.Windows.Forms.TextBox txtIdProvider;
-        private System.Windows.Forms.TextBox txtIdCatalog;
-        private System.Windows.Forms.TextBox txtTitle;
-        private System.Windows.Forms.TextBox txtNom;
-        private System.Windows.Forms.TextBox txtDescrip;
-        private System.Windows.Forms.TextBox txtObservation;
-        private System.Windows.Forms.TextBox txtPDistributor;
-        private System.Windows.Forms.TextBox txtPClient;
-        private System.Windows.Forms.TextBox txtPMember;
-        private System.Windows.Forms.DateTimePicker dtpDateUpdate;
         private System.Windows.Forms.Button btnGuardar;
-        private System.Windows.Forms.TextBox txtKeywords;
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.Button btnLimpiar;
+        private System.Windows.Forms.Button btnModificar;
+        private System.Windows.Forms.Label label16;
+        public System.Windows.Forms.TextBox txtId;
+        public System.Windows.Forms.CheckBox cbIsEnable;
+        public System.Windows.Forms.TextBox txtIdType;
+        public System.Windows.Forms.TextBox txtIdColor;
+        public System.Windows.Forms.TextBox txtIdBrand;
+        public System.Windows.Forms.TextBox txtIdProvider;
+        public System.Windows.Forms.TextBox txtIdCatalog;
+        public System.Windows.Forms.TextBox txtTitle;
+        public System.Windows.Forms.TextBox txtNom;
+        public System.Windows.Forms.TextBox txtDescrip;
+        public System.Windows.Forms.TextBox txtObservation;
+        public System.Windows.Forms.TextBox txtPDistributor;
+        public System.Windows.Forms.TextBox txtPClient;
+        public System.Windows.Forms.TextBox txtPMember;
+        public System.Windows.Forms.DateTimePicker dtpDateUpdate;
+        public System.Windows.Forms.TextBox txtKeywords;
     }
 }

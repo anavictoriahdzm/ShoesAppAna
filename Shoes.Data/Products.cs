@@ -12,17 +12,17 @@ namespace Shoes.Data
     using System;
     using System.Collections.Generic;
     
-    public partial class Product
+    public partial class Products
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public Product()
+        public Products()
         {
-            this.Comments = new HashSet<Comment>();
-            this.DetailProducts = new HashSet<DetailProduct>();
-            this.ImagesProducts = new HashSet<ImagesProduct>();
-            this.SimilarProducts = new HashSet<SimilarProduct>();
-            this.SizeForProducts = new HashSet<SizeForProduct>();
-            this.Qualifications = new HashSet<Qualification>();
+            this.Comments = new HashSet<Comments>();
+            this.DetailProduct = new HashSet<DetailProduct>();
+            this.ImagesProduct = new HashSet<ImagesProduct>();
+            this.SimilarProduct = new HashSet<SimilarProduct>();
+            this.SizeForProduct = new HashSet<SizeForProduct>();
+            this.Qualification = new HashSet<Qualification>();
         }
     
         public int Id { get; set; }
@@ -42,22 +42,22 @@ namespace Shoes.Data
         public string Keywords { get; set; }
         public Nullable<System.DateTime> DateUpdate { get; set; }
     
-        public virtual CatBrand CatBrand { get; set; }
-        public virtual CatCatalog CatCatalog { get; set; }
-        public virtual CatColor CatColor { get; set; }
-        public virtual CatProvider CatProvider { get; set; }
+        public virtual CatBrands CatBrands { get; set; }
+        public virtual CatCatalogs CatCatalogs { get; set; }
+        public virtual CatColors CatColors { get; set; }
+        public virtual CatProviders CatProviders { get; set; }
         public virtual CatTypeProduct CatTypeProduct { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Comment> Comments { get; set; }
+        public virtual ICollection<Comments> Comments { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<DetailProduct> DetailProducts { get; set; }
+        public virtual ICollection<DetailProduct> DetailProduct { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<ImagesProduct> ImagesProducts { get; set; }
+        public virtual ICollection<ImagesProduct> ImagesProduct { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<SimilarProduct> SimilarProducts { get; set; }
+        public virtual ICollection<SimilarProduct> SimilarProduct { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<SizeForProduct> SizeForProducts { get; set; }
+        public virtual ICollection<SizeForProduct> SizeForProduct { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Qualification> Qualifications { get; set; }
+        public virtual ICollection<Qualification> Qualification { get; set; }
     }
 }

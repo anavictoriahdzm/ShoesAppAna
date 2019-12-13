@@ -62,32 +62,32 @@
     <Compile Include="AVHM_MostrarProducts_Result.cs">
       <DependentUpon>shoesModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="CatBrand.cs">
+    <Compile Include="CatBrands.cs">
       <DependentUpon>shoesModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="CatCatalog.cs">
+    <Compile Include="CatCatalogs.cs">
       <DependentUpon>shoesModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="CatColor.cs">
+    <Compile Include="CatColors.cs">
       <DependentUpon>shoesModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="CatProvider.cs">
+    <Compile Include="CatProviders.cs">
       <DependentUpon>shoesModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="CatRating.cs">
+    <Compile Include="CatRatings.cs">
       <DependentUpon>shoesModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="CatSize.cs">
+    <Compile Include="CatSizes.cs">
       <DependentUpon>shoesModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="CatTypeDetail.cs">
+    <Compile Include="CatTypeDetails.cs">
       <DependentUpon>shoesModel.tt</DependentUpon>
     </Compile>
     <Compile Include="CatTypeProduct.cs">
       <DependentUpon>shoesModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Class1.cs" />
-    <Compile Include="Comment.cs">
+    <Compile Include="Comments.cs">
       <DependentUpon>shoesModel.tt</DependentUpon>
     </Compile>
     <Compile Include="database_firewall_rules.cs">
@@ -105,7 +105,7 @@
     <Compile Include="ImagesProduct.cs">
       <DependentUpon>shoesModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="Product.cs">
+    <Compile Include="Products.cs">
       <DependentUpon>shoesModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -133,7 +133,7 @@
     <Compile Include="SizeForProduct.cs">
       <DependentUpon>shoesModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="sysdiagram.cs">
+    <Compile Include="sysdiagrams.cs">
       <DependentUpon>shoesModel.tt</DependentUpon>
     </Compile>
   </ItemGroup>

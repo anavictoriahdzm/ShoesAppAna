@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Schema Namespace="DataProductsModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
-  <EntityType Name="CatBrand">
+  <EntityType Name="CatBrands">
     <Key>
       <PropertyRef Name="IdBrand" />
     </Key>
@@ -12,7 +12,7 @@
     <Property Name="DateUpdate" Type="DateTime" Nullable="false" Precision="3" />
     <NavigationProperty Name="Products" Relationship="Self.FK_CatBrandsProducts" FromRole="CatBrands" ToRole="Products" />
   </EntityType>
-  <EntityType Name="CatCatalog">
+  <EntityType Name="CatCatalogs">
     <Key>
       <PropertyRef Name="IdCatalog" />
     </Key>
@@ -23,10 +23,10 @@
     <Property Name="EndActiveDate" Type="DateTime" Precision="3" />
     <Property Name="DateUpdate" Type="DateTime" Precision="3" />
     <Property Name="IsEnabled" Type="Boolean" Nullable="false" />
-    <NavigationProperty Name="CatProvider" Relationship="Self.FK_CatCatalogsCatProviders" FromRole="CatCatalogs" ToRole="CatProviders" />
+    <NavigationProperty Name="CatProviders" Relationship="Self.FK_CatCatalogsCatProviders" FromRole="CatCatalogs" ToRole="CatProviders" />
     <NavigationProperty Name="Products" Relationship="Self.FK_CatCatalogsProducts" FromRole="CatCatalogs" ToRole="Products" />
   </EntityType>
-  <EntityType Name="CatColor">
+  <EntityType Name="CatColors">
     <Key>
       <PropertyRef Name="IdColor" />
     </Key>
@@ -37,7 +37,7 @@
     <Property Name="IsEnable" Type="Boolean" Nullable="false" />
     <NavigationProperty Name="Products" Relationship="Self.FK_CatColorsProducts" FromRole="CatColors" ToRole="Products" />
   </EntityType>
-  <EntityType Name="CatProvider">
+  <EntityType Name="CatProviders">
     <Key>
       <PropertyRef Name="IdProvider" />
     </Key>
@@ -50,7 +50,7 @@
     <NavigationProperty Name="CatCatalogs" Relationship="Self.FK_CatCatalogsCatProviders" FromRole="CatProviders" ToRole="CatCatalogs" />
     <NavigationProperty Name="Products" Relationship="Self.FK_ProductsCatProviders" FromRole="CatProviders" ToRole="Products" />
   </EntityType>
-  <EntityType Name="CatRating">
+  <EntityType Name="CatRatings">
     <Key>
       <PropertyRef Name="IdRating" />
     </Key>
@@ -58,9 +58,9 @@
     <Property Name="Code" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
     <Property Name="Description" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
     <NavigationProperty Name="Comments" Relationship="Self.FK_CatRatingsComments" FromRole="CatRatings" ToRole="Comments" />
-    <NavigationProperty Name="Qualifications" Relationship="Self.FK_CatRatingsQualification" FromRole="CatRatings" ToRole="Qualification" />
+    <NavigationProperty Name="Qualification" Relationship="Self.FK_CatRatingsQualification" FromRole="CatRatings" ToRole="Qualification" />
   </EntityType>
-  <EntityType Name="CatSize">
+  <EntityType Name="CatSizes">
     <Key>
       <PropertyRef Name="IdSize" />
     </Key>
@@ -70,10 +70,10 @@
     <Property Name="Unity" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
     <Property Name="Description" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
     <Property Name="Value" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
-    <NavigationProperty Name="SizeForProducts" Relationship="Self.FK_CatSizesSizeForProduct" FromRole="CatSizes" ToRole="SizeForProduct" />
+    <NavigationProperty Name="SizeForProduct" Relationship="Self.FK_CatSizesSizeForProduct" FromRole="CatSizes" ToRole="SizeForProduct" />
     <NavigationProperty Name="CatTypeProduct" Relationship="Self.FK_CatTypeProductCatSizes" FromRole="CatSizes" ToRole="CatTypeProduct" />
   </EntityType>
-  <EntityType Name="CatTypeDetail">
+  <EntityType Name="CatTypeDetails">
     <Key>
       <PropertyRef Name="IdTypeDetail" />
     </Key>
@@ -82,7 +82,7 @@
     <Property Name="Code" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
     <Property Name="Name" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
     <Property Name="Description" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
-    <NavigationProperty Name="DetailProducts" Relationship="Self.FK_CatTypeDetailsDetailProduct" FromRole="CatTypeDetails" ToRole="DetailProduct" />
+    <NavigationProperty Name="DetailProduct" Relationship="Self.FK_CatTypeDetailsDetailProduct" FromRole="CatTypeDetails" ToRole="DetailProduct" />
     <NavigationProperty Name="CatTypeProduct" Relationship="Self.FK_CatTypeProductCatTypeDetails" FromRole="CatTypeDetails" ToRole="CatTypeProduct" />
   </EntityType>
   <EntityType Name="CatTypeProduct">
@@ -98,7 +98,7 @@
     <NavigationProperty Name="CatTypeDetails" Relationship="Self.FK_CatTypeProductCatTypeDetails" FromRole="CatTypeProduct" ToRole="CatTypeDetails" />
     <NavigationProperty Name="Products" Relationship="Self.FK_CatTypeProductProducts" FromRole="CatTypeProduct" ToRole="Products" />
   </EntityType>
-  <EntityType Name="Comment">
+  <EntityType Name="Comments">
     <Key>
       <PropertyRef Name="IdComent" />
     </Key>
@@ -107,10 +107,10 @@
     <Property Name="IdRating" Type="Int32" Nullable="false" />
     <Property Name="UserName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
     <Property Name="Name" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-    <Property Name="Comment1" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Comment" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
     <Property Name="DateCommnet" Type="DateTime" Nullable="false" Precision="3" />
-    <NavigationProperty Name="CatRating" Relationship="Self.FK_CatRatingsComments" FromRole="Comments" ToRole="CatRatings" />
-    <NavigationProperty Name="Product" Relationship="Self.FK_ProductsComments" FromRole="Comments" ToRole="Products" />
+    <NavigationProperty Name="CatRatings" Relationship="Self.FK_CatRatingsComments" FromRole="Comments" ToRole="CatRatings" />
+    <NavigationProperty Name="Products" Relationship="Self.FK_ProductsComments" FromRole="Comments" ToRole="Products" />
   </EntityType>
   <EntityType Name="database_firewall_rules">
     <Key>
@@ -153,8 +153,8 @@
     <Property Name="IdTypeDetail" Type="Int32" Nullable="false" />
     <Property Name="Description" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
     <Property Name="DateUpdate" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
-    <NavigationProperty Name="CatTypeDetail" Relationship="Self.FK_CatTypeDetailsDetailProduct" FromRole="DetailProduct" ToRole="CatTypeDetails" />
-    <NavigationProperty Name="Product" Relationship="Self.FK_ProductsDetailProduct" FromRole="DetailProduct" ToRole="Products" />
+    <NavigationProperty Name="CatTypeDetails" Relationship="Self.FK_CatTypeDetailsDetailProduct" FromRole="DetailProduct" ToRole="CatTypeDetails" />
+    <NavigationProperty Name="Products" Relationship="Self.FK_ProductsDetailProduct" FromRole="DetailProduct" ToRole="Products" />
   </EntityType>
   <EntityType Name="ImagesProduct">
     <Key>
@@ -162,13 +162,13 @@
     </Key>
     <Property Name="IdImage" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="IdProduct" Type="Int32" Nullable="false" />
-    <Property Name="Decription" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Decription" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
     <Property Name="Image" Type="Binary" MaxLength="Max" FixedLength="false" Nullable="false" />
-    <Property Name="DateUpdate" Type="DateTime" Precision="3" />
-    <Property Name="IsEnabled" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
-    <NavigationProperty Name="Product" Relationship="Self.FK_ProductsImagesProduct" FromRole="ImagesProduct" ToRole="Products" />
+    <Property Name="DateUpdate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="IsEnabled" Type="Boolean" Nullable="false" />
+    <NavigationProperty Name="Products" Relationship="Self.FK_IDProducto" FromRole="ImagesProduct" ToRole="Products" />
   </EntityType>
-  <EntityType Name="Product">
+  <EntityType Name="Products">
     <Key>
       <PropertyRef Name="Id" />
     </Key>
@@ -188,17 +188,17 @@
     <Property Name="IsEnabled" Type="Boolean" Nullable="false" />
     <Property Name="Keywords" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
     <Property Name="DateUpdate" Type="DateTime" Precision="3" />
-    <NavigationProperty Name="CatBrand" Relationship="Self.FK_CatBrandsProducts" FromRole="Products" ToRole="CatBrands" />
-    <NavigationProperty Name="CatCatalog" Relationship="Self.FK_CatCatalogsProducts" FromRole="Products" ToRole="CatCatalogs" />
-    <NavigationProperty Name="CatColor" Relationship="Self.FK_CatColorsProducts" FromRole="Products" ToRole="CatColors" />
-    <NavigationProperty Name="CatProvider" Relationship="Self.FK_ProductsCatProviders" FromRole="Products" ToRole="CatProviders" />
+    <NavigationProperty Name="CatBrands" Relationship="Self.FK_CatBrandsProducts" FromRole="Products" ToRole="CatBrands" />
+    <NavigationProperty Name="CatCatalogs" Relationship="Self.FK_CatCatalogsProducts" FromRole="Products" ToRole="CatCatalogs" />
+    <NavigationProperty Name="CatColors" Relationship="Self.FK_CatColorsProducts" FromRole="Products" ToRole="CatColors" />
+    <NavigationProperty Name="CatProviders" Relationship="Self.FK_ProductsCatProviders" FromRole="Products" ToRole="CatProviders" />
     <NavigationProperty Name="CatTypeProduct" Relationship="Self.FK_CatTypeProductProducts" FromRole="Products" ToRole="CatTypeProduct" />
     <NavigationProperty Name="Comments" Relationship="Self.FK_ProductsComments" FromRole="Products" ToRole="Comments" />
-    <NavigationProperty Name="DetailProducts" Relationship="Self.FK_ProductsDetailProduct" FromRole="Products" ToRole="DetailProduct" />
-    <NavigationProperty Name="ImagesProducts" Relationship="Self.FK_ProductsImagesProduct" FromRole="Products" ToRole="ImagesProduct" />
-    <NavigationProperty Name="SimilarProducts" Relationship="Self.FK_ProductsSimilarProduct" FromRole="Products" ToRole="SimilarProduct" />
-    <NavigationProperty Name="SizeForProducts" Relationship="Self.FK_ProductsSizeForProduct" FromRole="Products" ToRole="SizeForProduct" />
-    <NavigationProperty Name="Qualifications" Relationship="Self.FK_QualificationProducts" FromRole="Products" ToRole="Qualification" />
+    <NavigationProperty Name="DetailProduct" Relationship="Self.FK_ProductsDetailProduct" FromRole="Products" ToRole="DetailProduct" />
+    <NavigationProperty Name="ImagesProduct" Relationship="Self.FK_IDProducto" FromRole="Products" ToRole="ImagesProduct" />
+    <NavigationProperty Name="SimilarProduct" Relationship="Self.FK_ProductsSimilarProduct" FromRole="Products" ToRole="SimilarProduct" />
+    <NavigationProperty Name="SizeForProduct" Relationship="Self.FK_ProductsSizeForProduct" FromRole="Products" ToRole="SizeForProduct" />
+    <NavigationProperty Name="Qualification" Relationship="Self.FK_QualificationProducts" FromRole="Products" ToRole="Qualification" />
   </EntityType>
   <EntityType Name="Qualification">
     <Key>
@@ -209,8 +209,8 @@
     <Property Name="IdRating" Type="Int32" Nullable="false" />
     <Property Name="Count" Type="Int32" Nullable="false" />
     <Property Name="DateUpdate" Type="DateTime" Nullable="false" Precision="3" />
-    <NavigationProperty Name="CatRating" Relationship="Self.FK_CatRatingsQualification" FromRole="Qualification" ToRole="CatRatings" />
-    <NavigationProperty Name="Product" Relationship="Self.FK_QualificationProducts" FromRole="Qualification" ToRole="Products" />
+    <NavigationProperty Name="CatRatings" Relationship="Self.FK_CatRatingsQualification" FromRole="Qualification" ToRole="CatRatings" />
+    <NavigationProperty Name="Products" Relationship="Self.FK_QualificationProducts" FromRole="Qualification" ToRole="Products" />
   </EntityType>
   <EntityType Name="SimilarProduct">
     <Key>
@@ -219,7 +219,7 @@
     <Property Name="IdSimilarProduct" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="IdProduct" Type="Int32" Nullable="false" />
     <Property Name="IdSimilary" Type="Int32" Nullable="false" />
-    <NavigationProperty Name="Product" Relationship="Self.FK_ProductsSimilarProduct" FromRole="SimilarProduct" ToRole="Products" />
+    <NavigationProperty Name="Products" Relationship="Self.FK_ProductsSimilarProduct" FromRole="SimilarProduct" ToRole="Products" />
   </EntityType>
   <EntityType Name="SizeForProduct">
     <Key>
@@ -228,10 +228,10 @@
     <Property Name="IdSizeProduct" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="IdProduct" Type="Int32" Nullable="false" />
     <Property Name="IdSize" Type="Int32" Nullable="false" />
-    <NavigationProperty Name="CatSize" Relationship="Self.FK_CatSizesSizeForProduct" FromRole="SizeForProduct" ToRole="CatSizes" />
-    <NavigationProperty Name="Product" Relationship="Self.FK_ProductsSizeForProduct" FromRole="SizeForProduct" ToRole="Products" />
+    <NavigationProperty Name="CatSizes" Relationship="Self.FK_CatSizesSizeForProduct" FromRole="SizeForProduct" ToRole="CatSizes" />
+    <NavigationProperty Name="Products" Relationship="Self.FK_ProductsSizeForProduct" FromRole="SizeForProduct" ToRole="Products" />
   </EntityType>
-  <EntityType Name="sysdiagram">
+  <EntityType Name="sysdiagrams">
     <Key>
       <PropertyRef Name="diagram_id" />
     </Key>
@@ -258,8 +258,8 @@
     <Property Name="modify_date" Type="DateTime" Nullable="false" Precision="3" />
   </EntityType>
   <Association Name="FK_CatBrandsProducts">
-    <End Role="CatBrands" Type="Self.CatBrand" Multiplicity="0..1" />
-    <End Role="Products" Type="Self.Product" Multiplicity="*" />
+    <End Role="CatBrands" Type="Self.CatBrands" Multiplicity="0..1" />
+    <End Role="Products" Type="Self.Products" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="CatBrands">
         <PropertyRef Name="IdBrand" />
@@ -270,8 +270,8 @@
     </ReferentialConstraint>
   </Association>
   <Association Name="FK_CatCatalogsCatProviders">
-    <End Role="CatProviders" Type="Self.CatProvider" Multiplicity="0..1" />
-    <End Role="CatCatalogs" Type="Self.CatCatalog" Multiplicity="*" />
+    <End Role="CatProviders" Type="Self.CatProviders" Multiplicity="0..1" />
+    <End Role="CatCatalogs" Type="Self.CatCatalogs" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="CatProviders">
         <PropertyRef Name="IdProvider" />
@@ -282,8 +282,8 @@
     </ReferentialConstraint>
   </Association>
   <Association Name="FK_CatCatalogsProducts">
-    <End Role="CatCatalogs" Type="Self.CatCatalog" Multiplicity="0..1" />
-    <End Role="Products" Type="Self.Product" Multiplicity="*" />
+    <End Role="CatCatalogs" Type="Self.CatCatalogs" Multiplicity="0..1" />
+    <End Role="Products" Type="Self.Products" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="CatCatalogs">
         <PropertyRef Name="IdCatalog" />
@@ -294,8 +294,8 @@
     </ReferentialConstraint>
   </Association>
   <Association Name="FK_CatColorsProducts">
-    <End Role="CatColors" Type="Self.CatColor" Multiplicity="0..1" />
-    <End Role="Products" Type="Self.Product" Multiplicity="*" />
+    <End Role="CatColors" Type="Self.CatColors" Multiplicity="0..1" />
+    <End Role="Products" Type="Self.Products" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="CatColors">
         <PropertyRef Name="IdColor" />
@@ -306,8 +306,8 @@
     </ReferentialConstraint>
   </Association>
   <Association Name="FK_ProductsCatProviders">
-    <End Role="CatProviders" Type="Self.CatProvider" Multiplicity="0..1" />
-    <End Role="Products" Type="Self.Product" Multiplicity="*" />
+    <End Role="CatProviders" Type="Self.CatProviders" Multiplicity="0..1" />
+    <End Role="Products" Type="Self.Products" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="CatProviders">
         <PropertyRef Name="IdProvider" />
@@ -318,8 +318,8 @@
     </ReferentialConstraint>
   </Association>
   <Association Name="FK_CatRatingsComments">
-    <End Role="CatRatings" Type="Self.CatRating" Multiplicity="1" />
-    <End Role="Comments" Type="Self.Comment" Multiplicity="*" />
+    <End Role="CatRatings" Type="Self.CatRatings" Multiplicity="1" />
+    <End Role="Comments" Type="Self.Comments" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="CatRatings">
         <PropertyRef Name="IdRating" />
@@ -330,7 +330,7 @@
     </ReferentialConstraint>
   </Association>
   <Association Name="FK_CatRatingsQualification">
-    <End Role="CatRatings" Type="Self.CatRating" Multiplicity="1" />
+    <End Role="CatRatings" Type="Self.CatRatings" Multiplicity="1" />
     <End Role="Qualification" Type="Self.Qualification" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="CatRatings">
@@ -342,7 +342,7 @@
     </ReferentialConstraint>
   </Association>
   <Association Name="FK_CatSizesSizeForProduct">
-    <End Role="CatSizes" Type="Self.CatSize" Multiplicity="1" />
+    <End Role="CatSizes" Type="Self.CatSizes" Multiplicity="1" />
     <End Role="SizeForProduct" Type="Self.SizeForProduct" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="CatSizes">
@@ -355,7 +355,7 @@
   </Association>
   <Association Name="FK_CatTypeProductCatSizes">
     <End Role="CatTypeProduct" Type="Self.CatTypeProduct" Multiplicity="1" />
-    <End Role="CatSizes" Type="Self.CatSize" Multiplicity="*" />
+    <End Role="CatSizes" Type="Self.CatSizes" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="CatTypeProduct">
         <PropertyRef Name="IdType" />
@@ -366,7 +366,7 @@
     </ReferentialConstraint>
   </Association>
   <Association Name="FK_CatTypeDetailsDetailProduct">
-    <End Role="CatTypeDetails" Type="Self.CatTypeDetail" Multiplicity="1" />
+    <End Role="CatTypeDetails" Type="Self.CatTypeDetails" Multiplicity="1" />
     <End Role="DetailProduct" Type="Self.DetailProduct" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="CatTypeDetails">
@@ -379,7 +379,7 @@
   </Association>
   <Association Name="FK_CatTypeProductCatTypeDetails">
     <End Role="CatTypeProduct" Type="Self.CatTypeProduct" Multiplicity="1" />
-    <End Role="CatTypeDetails" Type="Self.CatTypeDetail" Multiplicity="*" />
+    <End Role="CatTypeDetails" Type="Self.CatTypeDetails" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="CatTypeProduct">
         <PropertyRef Name="IdType" />
@@ -391,7 +391,7 @@
   </Association>
   <Association Name="FK_CatTypeProductProducts">
     <End Role="CatTypeProduct" Type="Self.CatTypeProduct" Multiplicity="0..1" />
-    <End Role="Products" Type="Self.Product" Multiplicity="*" />
+    <End Role="Products" Type="Self.Products" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="CatTypeProduct">
         <PropertyRef Name="IdType" />
@@ -402,8 +402,8 @@
     </ReferentialConstraint>
   </Association>
   <Association Name="FK_ProductsComments">
-    <End Role="Products" Type="Self.Product" Multiplicity="1" />
-    <End Role="Comments" Type="Self.Comment" Multiplicity="*" />
+    <End Role="Products" Type="Self.Products" Multiplicity="1" />
+    <End Role="Comments" Type="Self.Comments" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="Products">
         <PropertyRef Name="Id" />
@@ -414,7 +414,7 @@
     </ReferentialConstraint>
   </Association>
   <Association Name="FK_ProductsDetailProduct">
-    <End Role="Products" Type="Self.Product" Multiplicity="1" />
+    <End Role="Products" Type="Self.Products" Multiplicity="1" />
     <End Role="DetailProduct" Type="Self.DetailProduct" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="Products">
@@ -425,8 +425,8 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK_ProductsImagesProduct">
-    <End Role="Products" Type="Self.Product" Multiplicity="1" />
+  <Association Name="FK_IDProducto">
+    <End Role="Products" Type="Self.Products" Multiplicity="1" />
     <End Role="ImagesProduct" Type="Self.ImagesProduct" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="Products">
@@ -438,7 +438,7 @@
     </ReferentialConstraint>
   </Association>
   <Association Name="FK_ProductsSimilarProduct">
-    <End Role="Products" Type="Self.Product" Multiplicity="1" />
+    <End Role="Products" Type="Self.Products" Multiplicity="1" />
     <End Role="SimilarProduct" Type="Self.SimilarProduct" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="Products">
@@ -450,7 +450,7 @@
     </ReferentialConstraint>
   </Association>
   <Association Name="FK_ProductsSizeForProduct">
-    <End Role="Products" Type="Self.Product" Multiplicity="1" />
+    <End Role="Products" Type="Self.Products" Multiplicity="1" />
     <End Role="SizeForProduct" Type="Self.SizeForProduct" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="Products">
@@ -462,7 +462,7 @@
     </ReferentialConstraint>
   </Association>
   <Association Name="FK_QualificationProducts">
-    <End Role="Products" Type="Self.Product" Multiplicity="1" />
+    <End Role="Products" Type="Self.Products" Multiplicity="1" />
     <End Role="Qualification" Type="Self.Qualification" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="Products">
@@ -474,24 +474,24 @@
     </ReferentialConstraint>
   </Association>
   <EntityContainer Name="DataProductsEntities" annotation:LazyLoadingEnabled="true">
-    <EntitySet Name="CatBrands" EntityType="Self.CatBrand" />
-    <EntitySet Name="CatCatalogs" EntityType="Self.CatCatalog" />
-    <EntitySet Name="CatColors" EntityType="Self.CatColor" />
-    <EntitySet Name="CatProviders" EntityType="Self.CatProvider" />
-    <EntitySet Name="CatRatings" EntityType="Self.CatRating" />
-    <EntitySet Name="CatSizes" EntityType="Self.CatSize" />
-    <EntitySet Name="CatTypeDetails" EntityType="Self.CatTypeDetail" />
-    <EntitySet Name="CatTypeProducts" EntityType="Self.CatTypeProduct" />
-    <EntitySet Name="Comments" EntityType="Self.Comment" />
+    <EntitySet Name="CatBrands" EntityType="Self.CatBrands" />
+    <EntitySet Name="CatCatalogs" EntityType="Self.CatCatalogs" />
+    <EntitySet Name="CatColors" EntityType="Self.CatColors" />
+    <EntitySet Name="CatProviders" EntityType="Self.CatProviders" />
+    <EntitySet Name="CatRatings" EntityType="Self.CatRatings" />
+    <EntitySet Name="CatSizes" EntityType="Self.CatSizes" />
+    <EntitySet Name="CatTypeDetails" EntityType="Self.CatTypeDetails" />
+    <EntitySet Name="CatTypeProduct" EntityType="Self.CatTypeProduct" />
+    <EntitySet Name="Comments" EntityType="Self.Comments" />
     <EntitySet Name="database_firewall_rules" EntityType="Self.database_firewall_rules" />
     <EntitySet Name="database_firewall_rules1" EntityType="Self.database_firewall_rules1" />
-    <EntitySet Name="DetailProducts" EntityType="Self.DetailProduct" />
-    <EntitySet Name="ImagesProducts" EntityType="Self.ImagesProduct" />
-    <EntitySet Name="Products" EntityType="Self.Product" />
-    <EntitySet Name="Qualifications" EntityType="Self.Qualification" />
-    <EntitySet Name="SimilarProducts" EntityType="Self.SimilarProduct" />
-    <EntitySet Name="SizeForProducts" EntityType="Self.SizeForProduct" />
-    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagram" />
+    <EntitySet Name="DetailProduct" EntityType="Self.DetailProduct" />
+    <EntitySet Name="ImagesProduct" EntityType="Self.ImagesProduct" />
+    <EntitySet Name="Products" EntityType="Self.Products" />
+    <EntitySet Name="Qualification" EntityType="Self.Qualification" />
+    <EntitySet Name="SimilarProduct" EntityType="Self.SimilarProduct" />
+    <EntitySet Name="SizeForProduct" EntityType="Self.SizeForProduct" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" />
     <EntitySet Name="database_firewall_rules2" EntityType="Self.database_firewall_rules2" />
     <AssociationSet Name="FK_CatBrandsProducts" Association="Self.FK_CatBrandsProducts">
       <End Role="CatBrands" EntitySet="CatBrands" />
@@ -519,26 +519,26 @@
     </AssociationSet>
     <AssociationSet Name="FK_CatRatingsQualification" Association="Self.FK_CatRatingsQualification">
       <End Role="CatRatings" EntitySet="CatRatings" />
-      <End Role="Qualification" EntitySet="Qualifications" />
+      <End Role="Qualification" EntitySet="Qualification" />
     </AssociationSet>
     <AssociationSet Name="FK_CatSizesSizeForProduct" Association="Self.FK_CatSizesSizeForProduct">
       <End Role="CatSizes" EntitySet="CatSizes" />
-      <End Role="SizeForProduct" EntitySet="SizeForProducts" />
+      <End Role="SizeForProduct" EntitySet="SizeForProduct" />
     </AssociationSet>
     <AssociationSet Name="FK_CatTypeProductCatSizes" Association="Self.FK_CatTypeProductCatSizes">
-      <End Role="CatTypeProduct" EntitySet="CatTypeProducts" />
+      <End Role="CatTypeProduct" EntitySet="CatTypeProduct" />
       <End Role="CatSizes" EntitySet="CatSizes" />
     </AssociationSet>
     <AssociationSet Name="FK_CatTypeDetailsDetailProduct" Association="Self.FK_CatTypeDetailsDetailProduct">
       <End Role="CatTypeDetails" EntitySet="CatTypeDetails" />
-      <End Role="DetailProduct" EntitySet="DetailProducts" />
+      <End Role="DetailProduct" EntitySet="DetailProduct" />
     </AssociationSet>
     <AssociationSet Name="FK_CatTypeProductCatTypeDetails" Association="Self.FK_CatTypeProductCatTypeDetails">
-      <End Role="CatTypeProduct" EntitySet="CatTypeProducts" />
+      <End Role="CatTypeProduct" EntitySet="CatTypeProduct" />
       <End Role="CatTypeDetails" EntitySet="CatTypeDetails" />
     </AssociationSet>
     <AssociationSet Name="FK_CatTypeProductProducts" Association="Self.FK_CatTypeProductProducts">
-      <End Role="CatTypeProduct" EntitySet="CatTypeProducts" />
+      <End Role="CatTypeProduct" EntitySet="CatTypeProduct" />
       <End Role="Products" EntitySet="Products" />
     </AssociationSet>
     <AssociationSet Name="FK_ProductsComments" Association="Self.FK_ProductsComments">
@@ -547,29 +547,47 @@
     </AssociationSet>
     <AssociationSet Name="FK_ProductsDetailProduct" Association="Self.FK_ProductsDetailProduct">
       <End Role="Products" EntitySet="Products" />
-      <End Role="DetailProduct" EntitySet="DetailProducts" />
+      <End Role="DetailProduct" EntitySet="DetailProduct" />
     </AssociationSet>
-    <AssociationSet Name="FK_ProductsImagesProduct" Association="Self.FK_ProductsImagesProduct">
+    <AssociationSet Name="FK_IDProducto" Association="Self.FK_IDProducto">
       <End Role="Products" EntitySet="Products" />
-      <End Role="ImagesProduct" EntitySet="ImagesProducts" />
+      <End Role="ImagesProduct" EntitySet="ImagesProduct" />
     </AssociationSet>
     <AssociationSet Name="FK_ProductsSimilarProduct" Association="Self.FK_ProductsSimilarProduct">
       <End Role="Products" EntitySet="Products" />
-      <End Role="SimilarProduct" EntitySet="SimilarProducts" />
+      <End Role="SimilarProduct" EntitySet="SimilarProduct" />
     </AssociationSet>
     <AssociationSet Name="FK_ProductsSizeForProduct" Association="Self.FK_ProductsSizeForProduct">
       <End Role="Products" EntitySet="Products" />
-      <End Role="SizeForProduct" EntitySet="SizeForProducts" />
+      <End Role="SizeForProduct" EntitySet="SizeForProduct" />
     </AssociationSet>
     <AssociationSet Name="FK_QualificationProducts" Association="Self.FK_QualificationProducts">
       <End Role="Products" EntitySet="Products" />
-      <End Role="Qualification" EntitySet="Qualifications" />
+      <End Role="Qualification" EntitySet="Qualification" />
     </AssociationSet>
     <FunctionImport Name="AVHM_BusquedaID" ReturnType="Collection(DataProductsModel.AVHM_BusquedaID_Result)">
       <Parameter Name="Id" Mode="In" Type="Int32" />
     </FunctionImport>
     <FunctionImport Name="AVHM_BusquedaNombre" ReturnType="Collection(DataProductsModel.AVHM_BusquedaNombre_Result)">
       <Parameter Name="Nombre" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="AVHM_Modificar">
+      <Parameter Name="Id" Mode="In" Type="Int32" />
+      <Parameter Name="idType" Mode="In" Type="Int32" />
+      <Parameter Name="idColor" Mode="In" Type="Int32" />
+      <Parameter Name="idBrand" Mode="In" Type="Int32" />
+      <Parameter Name="idProvider" Mode="In" Type="Int32" />
+      <Parameter Name="idCatalog" Mode="In" Type="Int32" />
+      <Parameter Name="Title" Mode="In" Type="String" />
+      <Parameter Name="Nombre" Mode="In" Type="String" />
+      <Parameter Name="Description" Mode="In" Type="String" />
+      <Parameter Name="Observations" Mode="In" Type="String" />
+      <Parameter Name="PriceDistributor" Mode="In" Type="Decimal" />
+      <Parameter Name="PriceClient" Mode="In" Type="Decimal" />
+      <Parameter Name="PriceMember" Mode="In" Type="Decimal" />
+      <Parameter Name="IsEnabled" Mode="In" Type="Boolean" />
+      <Parameter Name="Keywords" Mode="In" Type="String" />
+      <Parameter Name="DateUpdate" Mode="In" Type="DateTime" />
     </FunctionImport>
     <FunctionImport Name="AVHM_MostrarProducts" ReturnType="Collection(DataProductsModel.AVHM_MostrarProducts_Result)" />
     <FunctionImport Name="AVHM_SP_InsertProd">
