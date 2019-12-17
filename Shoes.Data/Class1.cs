@@ -108,5 +108,10 @@ namespace Shoes.Data
         {
             modeldb.AVHM_Modificar(Id, IdType, IdColor, IdBrand, IdProvider, IdCatalog, Title, Nombre, Description, Observations, PriceDistributor, PriceClient, PriceMember, IsEnabled, Keywords, DateUdate);
         }
+
+        public void EliminarProd(int Id)
+        {
+            modeldb.AVHM_Eliminar(Id);
+        }
     }
 }

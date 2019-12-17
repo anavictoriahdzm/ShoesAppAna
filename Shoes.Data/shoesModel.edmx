@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="DataProductsModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012.Azure" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="DataProductsModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012.Azure" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="CatBrands">
           <Key>
             <PropertyRef Name="IdBrand" />
@@ -450,6 +450,12 @@ warning 6002: The table/view 'DataProducts.sys.database_firewall_rules' does not
         <Function Name="AVHM_BusquedaNombre" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="Nombre" Type="varchar" Mode="In" />
         </Function>
+        <Function Name="AVHM_Eliminar" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="Id" Type="int" Mode="In" />
+        </Function>
+        <Function Name="AVHM_EliminarLogico" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="Id" Type="int" Mode="In" />
+        </Function>
         <Function Name="AVHM_Modificar" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="Id" Type="int" Mode="In" />
           <Parameter Name="idType" Type="int" Mode="In" />
@@ -588,8 +594,7 @@ warning 6002: The table/view 'DataProducts.sys.database_firewall_rules' does not
             <End Role="Qualification" EntitySet="Qualification" />
           </AssociationSet>
         </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="DataProductsModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -1159,10 +1164,10 @@ warning 6002: The table/view 'DataProducts.sys.database_firewall_rules' does not
             <End Role="Qualification" EntitySet="Qualification" />
           </AssociationSet>
           <FunctionImport Name="AVHM_BusquedaID" ReturnType="Collection(DataProductsModel.AVHM_BusquedaID_Result)">
-            <Parameter Name="Id" Mode="In" Type="Int32" />
+          <Parameter Name="Id" Mode="In" Type="Int32" />
           </FunctionImport>
           <FunctionImport Name="AVHM_BusquedaNombre" ReturnType="Collection(DataProductsModel.AVHM_BusquedaNombre_Result)">
-            <Parameter Name="Nombre" Mode="In" Type="String" />
+          <Parameter Name="Nombre" Mode="In" Type="String" />
           </FunctionImport>
           <FunctionImport Name="AVHM_Modificar">
             <Parameter Name="Id" Mode="In" Type="Int32" />
@@ -1199,6 +1204,12 @@ warning 6002: The table/view 'DataProducts.sys.database_firewall_rules' does not
             <Parameter Name="IsEnabled" Mode="In" Type="Boolean" />
             <Parameter Name="Keywords" Mode="In" Type="String" />
             <Parameter Name="DateUpdate" Mode="In" Type="DateTime" />
+          </FunctionImport>
+          <FunctionImport Name="AVHM_Eliminar">
+            <Parameter Name="Id" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="AVHM_EliminarLogico">
+            <Parameter Name="Id" Mode="In" Type="Int32" />
           </FunctionImport>
         </EntityContainer>
         <ComplexType Name="AVHM_BusquedaID_Result">
@@ -1554,6 +1565,8 @@ warning 6002: The table/view 'DataProducts.sys.database_firewall_rules' does not
             </ResultMapping>
           </FunctionImportMapping>
           <FunctionImportMapping FunctionImportName="AVHM_SP_InsertProd" FunctionName="DataProductsModel.Store.AVHM_SP_InsertProd" />
+          <FunctionImportMapping FunctionImportName="AVHM_Eliminar" FunctionName="DataProductsModel.Store.AVHM_Eliminar" />
+          <FunctionImportMapping FunctionImportName="AVHM_EliminarLogico" FunctionName="DataProductsModel.Store.AVHM_EliminarLogico" />
         </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>

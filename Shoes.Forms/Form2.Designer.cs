@@ -63,6 +63,7 @@
             this.btnModificar = new System.Windows.Forms.Button();
             this.label16 = new System.Windows.Forms.Label();
             this.txtId = new System.Windows.Forms.TextBox();
+            this.btnEliminar = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
@@ -320,9 +321,9 @@
             // 
             // btnLimpiar
             // 
-            this.btnLimpiar.Location = new System.Drawing.Point(733, 515);
+            this.btnLimpiar.Location = new System.Drawing.Point(677, 518);
             this.btnLimpiar.Name = "btnLimpiar";
-            this.btnLimpiar.Size = new System.Drawing.Size(82, 38);
+            this.btnLimpiar.Size = new System.Drawing.Size(90, 32);
             this.btnLimpiar.TabIndex = 31;
             this.btnLimpiar.Text = "Limpiar";
             this.btnLimpiar.UseVisualStyleBackColor = true;
@@ -330,12 +331,13 @@
             // 
             // btnModificar
             // 
-            this.btnModificar.Location = new System.Drawing.Point(556, 516);
+            this.btnModificar.Location = new System.Drawing.Point(556, 518);
             this.btnModificar.Name = "btnModificar";
-            this.btnModificar.Size = new System.Drawing.Size(90, 37);
+            this.btnModificar.Size = new System.Drawing.Size(90, 32);
             this.btnModificar.TabIndex = 32;
             this.btnModificar.Text = "Modificar";
             this.btnModificar.UseVisualStyleBackColor = true;
+            this.btnModificar.Click += new System.EventHandler(this.btnModificar_Click);
             // 
             // label16
             // 
@@ -354,11 +356,22 @@
             this.txtId.Size = new System.Drawing.Size(62, 26);
             this.txtId.TabIndex = 34;
             // 
+            // btnEliminar
+            // 
+            this.btnEliminar.Location = new System.Drawing.Point(673, 477);
+            this.btnEliminar.Name = "btnEliminar";
+            this.btnEliminar.Size = new System.Drawing.Size(94, 32);
+            this.btnEliminar.TabIndex = 35;
+            this.btnEliminar.Text = "Eliminar";
+            this.btnEliminar.UseVisualStyleBackColor = true;
+            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
+            // 
             // Form2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(975, 565);
+            this.Controls.Add(this.btnEliminar);
             this.Controls.Add(this.txtId);
             this.Controls.Add(this.label16);
             this.Controls.Add(this.btnModificar);
@@ -439,5 +452,6 @@
         public System.Windows.Forms.TextBox txtPMember;
         public System.Windows.Forms.DateTimePicker dtpDateUpdate;
         public System.Windows.Forms.TextBox txtKeywords;
+        private System.Windows.Forms.Button btnEliminar;
     }
 }

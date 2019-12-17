@@ -18,11 +18,12 @@ namespace Shoes.Forms
         {
             InitializeComponent();
         }
+        DataProductsEntities modeldb = new DataProductsEntities();
 
         public void InsertarProd(int IdType, int IdColor, int IdBrand, int IdProvider, int IdCatalog, string Title, string Nombre, string Description, string Observations, decimal PriceDistributor, decimal PriceClient, decimal PriceMember, bool IsEnabled, string Keywords, DateTime DateUdate)
         {
-            ProductsBL ObjetoNegocio = new ProductsBL();
-            ObjetoNegocio.InsertarProd(IdType, IdColor, IdBrand, IdProvider, IdCatalog, Title, Nombre, Description, Observations, PriceDistributor, PriceClient, PriceMember, IsEnabled, Keywords, DateUdate);
+            ProductsBL ObjetoNegocioInsertar = new ProductsBL();
+            ObjetoNegocioInsertar.InsertarProd(IdType, IdColor, IdBrand, IdProvider, IdCatalog, Title, Nombre, Description, Observations, PriceDistributor, PriceClient, PriceMember, IsEnabled, Keywords, DateUdate);
         }
 
         private void btnGuardar_Click(object sender, EventArgs e)
@@ -68,7 +69,7 @@ namespace Shoes.Forms
 
         private void Form2_Load(object sender, EventArgs e)
         {
-            if (txtId.Text != null)
+            if (!String.IsNullOrEmpty(txtId.Text))
             {
                 DataProductsEntities dtp = new DataProductsEntities();
                 ProductsBL objnegocio = new ProductsBL();
@@ -98,9 +99,59 @@ namespace Shoes.Forms
                     {
 
                     }
-                    
+
                 }
             }
+            else
+            {
+
+            }
+        }
+
+
+        public void ModificarProd(int Id, int IdType, int IdColor, int IdBrand, int IdProvider, int IdCatalog, string Title, string Nombre, string Description, string Observations, decimal PriceDistributor, decimal PriceClient, decimal PriceMember, bool IsEnabled, string Keywords, DateTime DateUdate)
+        {
+            ProductsBL ObjetoNegocioModificar = new ProductsBL();
+            ObjetoNegocioModificar.ModificarProd(Id, IdType, IdColor, IdBrand, IdProvider, IdCatalog, Title, Nombre, Description, Observations, PriceDistributor, PriceClient, PriceMember, IsEnabled, Keywords, DateUdate);
+        }
+
+        private void btnModificar_Click(object sender, EventArgs e)
+        {
+            int Id = int.Parse(txtId.Text);
+            int IdType = int.Parse(txtIdType.Text);
+            int IdColor = int.Parse(txtIdColor.Text);
+            int IdBrand = int.Parse(txtIdBrand.Text);
+            int IdProvider = int.Parse(txtIdProvider.Text);
+            int IdCatalog = int.Parse(txtIdCatalog.Text);
+            string Title = txtTitle.Text;
+            string Nombre = txtNom.Text;
+            string Description = txtDescrip.Text;
+            string Observations = txtObservation.Text;
+            decimal PriceDistributor = decimal.Parse(txtPDistributor.Text);
+            decimal PriceClient = decimal.Parse(txtPClient.Text);
+            decimal PriceMember = decimal.Parse(txtPMember.Text);
+            bool IsEnabled = cbIsEnable.Checked;
+            string Keywords = txtKeywords.Text;
+            DateTime DateUdate = dtpDateUpdate.Value;
+
+            ModificarProd(Id, IdType, IdColor, IdBrand, IdProvider, IdCatalog, Title, Nombre, Description, Observations, PriceDistributor, PriceClient, PriceMember, IsEnabled, Keywords, DateUdate);
+
+            MessageBox.Show("Se modifico Producto correctamente");
+        }
+
+        public void EliminarProd(int Id)
+        {
+            ProductsBL ObjetoNegocioEliminar = new ProductsBL();
+            ObjetoNegocioEliminar.EliminarProd(Id);
+        }
+
+        private void btnEliminar_Click(object sender, EventArgs e)
+        {
+            int Id = int.Parse(txtId.Text);
+            EliminarProd(Id);
+
+            MessageBox.Show("Se Elimino Producto correctamente");
+            this.Close();
         }
     }
 }

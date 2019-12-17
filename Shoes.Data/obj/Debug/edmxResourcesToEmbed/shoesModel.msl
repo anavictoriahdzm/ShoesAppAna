@@ -294,5 +294,7 @@
       </ResultMapping>
     </FunctionImportMapping>
     <FunctionImportMapping FunctionImportName="AVHM_SP_InsertProd" FunctionName="DataProductsModel.Store.AVHM_SP_InsertProd" />
+    <FunctionImportMapping FunctionImportName="AVHM_Eliminar" FunctionName="DataProductsModel.Store.AVHM_Eliminar" />
+    <FunctionImportMapping FunctionImportName="AVHM_EliminarLogico" FunctionName="DataProductsModel.Store.AVHM_EliminarLogico" />
   </EntityContainerMapping>
 </Mapping>

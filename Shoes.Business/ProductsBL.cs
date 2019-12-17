@@ -40,5 +40,11 @@ namespace Shoes.Business
             DatoProducts objetoModificarDatos = new DatoProducts();
             objetoModificarDatos.ModificarProd(Id, IdType, IdColor, IdBrand, IdProvider, IdCatalog, Title, Nombre, Description, Observations, PriceDistributor, PriceClient, PriceMember, IsEnabled, Keywords, DateUdate);
         }
+
+        public void EliminarProd(int Id)
+        {
+            DatoProducts objetoEliminarDatos = new DatoProducts();
+            objetoEliminarDatos.EliminarProd(Id);
+        }
     }
 }

@@ -203,5 +203,23 @@ namespace Shoes.Data
     
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("AVHM_SP_InsertProd", idTypeParameter, idColorParameter, idBrandParameter, idProviderParameter, idCatalogParameter, titleParameter, nombreParameter, descriptionParameter, observationsParameter, priceDistributorParameter, priceClientParameter, priceMemberParameter, isEnabledParameter, keywordsParameter, dateUpdateParameter);
         }
+    
+        public virtual int AVHM_Eliminar(Nullable<int> id)
+        {
+            var idParameter = id.HasValue ?
+                new ObjectParameter("Id", id) :
+                new ObjectParameter("Id", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("AVHM_Eliminar", idParameter);
+        }
+    
+        public virtual int AVHM_EliminarLogico(Nullable<int> id)
+        {
+            var idParameter = id.HasValue ?
+                new ObjectParameter("Id", id) :
+                new ObjectParameter("Id", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("AVHM_EliminarLogico", idParameter);
+        }
     }
 }

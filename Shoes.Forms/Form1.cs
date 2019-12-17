@@ -20,13 +20,13 @@ namespace Shoes.Forms
             InitializeComponent();
         }
 
-        private void Form1_Load(object sender, EventArgs e)
+        public void Form1_Load(object sender, EventArgs e)
         {
             dgvDatos.DataSource = LlenarGrid();
         }
 
 
-        private List<AVHM_MostrarProducts_Result> LlenarGrid()  //ProductBL es classe de capa Negocio
+        public List<AVHM_MostrarProducts_Result> LlenarGrid()  //ProductBL es classe de capa Negocio
         {
             ProductsBL negocioProducto = new ProductsBL();
             return negocioProducto.ListaProductos();
@@ -68,6 +68,15 @@ namespace Shoes.Forms
         }
 
         private void btnModificar_Click(object sender, EventArgs e)
+        {
+            Shoes.Forms.Form2 Frm2 = new Shoes.Forms.Form2();
+            int varid = (int)dgvDatos.CurrentRow.Cells["Id"].Value;
+            Frm2.txtId.Text = varid.ToString();
+            Frm2.ShowDialog();
+        }
+
+
+        private void btnEliminar_Click(object sender, EventArgs e)
         {
             Shoes.Forms.Form2 Frm2 = new Shoes.Forms.Form2();
             int varid = (int)dgvDatos.CurrentRow.Cells["Id"].Value;
